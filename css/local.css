@@ -1,0 +1,71 @@
+
+/*+ BACKGROUND VIDEO +*/
+.background-video {
+  position: fixed;
+  width: 100%;
+  min-height: 1080px;
+  background-color: rgba(40, 46, 52, 0.334);
+}
+
+.background-video video {
+  position: fixed;
+  min-width: 100%;
+  top: 0;
+  z-index: -9999;
+}
+/*- BACKGROUND VIDEO -*/
+
+/*+ HUD +*/
+.hud {
+  text-align: left;
+  z-index: 1;
+}
+.bg-bar {
+  width: 500px;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.397);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.health-bg {
+  height: 34px;
+  box-shadow: rgba(0, 0, 0, 0.45);
+}
+.power-bg {
+  height: 13px;
+}
+.health-bar{
+  height: 24px;
+  width: 490px;
+  background-color: #f53b51;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.power-bar {
+  height:5px;
+  width: 290px;
+  background-color: #ffaf03;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.profile-photo{
+  display: block;
+  order: 0;
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 115.438px;
+  max-height: 115.438px;
+}
+.hud-text {
+  
+}
+/*- HUD -*/

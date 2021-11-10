@@ -1,0 +1,41 @@
+body,
+html {
+  padding: 0;
+  margin: 0;
+  font-family: 'Arimo', sans-serif;
+  scroll-behavior: smooth;
+  background-color: transparent;
+  color: #fff;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.display-row{
+  display: flex;
+  flex-direction: row;
+}
+.display-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.order-0 {
+  order: 0;
+}
+.order-1 {
+  order: 1;
+}
+.order-2 {
+  order: 2;
+}
+.order-3 {
+  order: 3;
+}
+.order-4 {
+  order: 4;
+}
+.order-5 {
+  order: 5;
+}
