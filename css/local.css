@@ -79,7 +79,7 @@
   width: 100%;
   padding: 0;
   box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.45);
-  border: 0.8px solid rgba(0, 0, 0, 0.6);;
+  border: 0.8px solid rgba(0, 0, 0, 0.6);
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -90,7 +90,7 @@
 .box-header{
   padding: 0px;
   margin: 0 !important;
-  border-bottom: 0.8px solid rgba(0, 0, 0, 0.6);;
+  border-bottom: 0.8px solid rgba(0, 0, 0, 0.6);
   background-color: rgba(0, 0, 0, 0.5);
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
