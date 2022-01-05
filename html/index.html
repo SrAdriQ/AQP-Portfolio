@@ -30,10 +30,10 @@
 
 <body>
     <div class="background-video">
-        <video src="../src/video/bckv.mp4" autoplay muted loop type="video/mp4"></video>
+        <video src="../src/video/bckv.webm" autoplay muted loop type="video/mp4"></video>
     </div>
     <main>
-        <div class="row" style="margin: 0;">
+        <div class="row">
             <div class="col">
                 <div class="hud display-row">
                     <img src="../src/img/profile.png" class="order-0 img-fluid rounded-circle profile-photo" alt="adrian photo">
@@ -49,18 +49,31 @@
                 </div>
             </div>
         </div>
-        <div class="row" style="margin: 0;">
-            <div class="col-6">
-                <div class="box-container display-column">
+        <br/>
+        <div class="row">
+            <div class="col-4">
+                <div id="content-menu" class="box-container display-column hide">
                     <div class="box-header display-row">
-                        <div class="size-4">
-                            <h2>Content</h2>
+                        <div class="size-20">
+                            <h2 class="box-h2">Content</h2>
                         </div>
                         <div class="size-1 display-row">
-                            <button class="close-button">X</button>
+                            <button class="close-button" onClick="closeButton('content-menu')">X</button>
                         </div>
                     </div>
                     <div class="item-box-container"></div>
+                    <div class="item-box-container"></div>
+                    <div class="item-box-container"></div>
+                    <div class="item-box-container" style="margin-bottom: 12px;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="display-row hud-button-panel">
+                    <button class="hud-button"></button>
+                    <button class="hud-button"></button>
+                    <button class="hud-button"></button>
                 </div>
             </div>
         </div>
