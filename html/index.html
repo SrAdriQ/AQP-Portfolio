@@ -58,22 +58,59 @@
                             <h2 class="box-h2">Content</h2>
                         </div>
                         <div class="size-1 display-row">
-                            <button class="close-button" onClick="closeButton('content-menu')">X</button>
+                            <button class="close-button" onClick="closeWindow('content-menu')">X</button>
                         </div>
                     </div>
-                    <div class="item-box-container"></div>
-                    <div class="item-box-container"></div>
-                    <div class="item-box-container"></div>
-                    <div class="item-box-container" style="margin-bottom: 12px;"></div>
+                    <div class="item-box-container">Test</div>
+                    <div class="item-box-container">Test</div>
+                    <div class="item-box-container">Test</div>
+                    <div class="item-box-container">Test</div>
+                    <div class="item-box-container" style="margin-bottom: 12px;">Test</div>
+                </div>
+            </div>
+        </div>
+        <div id="profile" class="profile-container box-container display-column">
+            <div class="box-header display-row">
+                <div class="size-20">
+                    <h2 class="box-h2">Profile</h2>
+                </div>
+                <div class="size-1 display-row">
+                    <button class="close-button" onClick="closeWindow('profile')">X</button>
+                </div>
+            </div>
+        </div>
+        <div id="jobs" class="jobs-container box-container display-column">
+            <div class="box-header display-row">
+                <div class="size-20">
+                    <h2 class="box-h2">Jobs</h2>
+                </div>
+                <div class="size-1 display-row">
+                    <button class="close-button" onClick="closeWindow('jobs')">X</button>
+                </div>
+            </div>
+        </div>
+        <div id="projects" class="jobs-container box-container display-column">
+            <div class="box-header display-row">
+                <div class="size-20">
+                    <h2 class="box-h2">Jobs</h2>
+                </div>
+                <div class="size-1 display-row">
+                    <button class="close-button" onClick="closeWindow('jobs')">X</button>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col">
                 <div class="display-row hud-button-panel">
-                    <button class="hud-button"></button>
-                    <button class="hud-button"></button>
-                    <button class="hud-button"></button>
+                    <button class="hud-button">
+                        <img class="button-icon" src="../src/img/profile-48.png" alt="profile" onClick="openWindow('content-menu')">
+                    </button>
+                    <button class="hud-button">
+                        <img class="button-icon" src="../src/img/jobs-48.png" alt="jobs" onClick="openWindow('')">
+                    </button>
+                    <button class="hud-button">
+                        <img class="button-icon" src="../src/img/projects-48.png" alt="projects" onClick="openWindow('')">
+                    </button>
                 </div>
             </div>
         </div>

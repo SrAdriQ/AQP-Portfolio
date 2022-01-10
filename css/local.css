@@ -74,8 +74,11 @@
 }
 
 .hud-button-panel {
+  position:fixed;
+  bottom: 0px;
+  width: 100%;
+  display: flex;
   justify-content: center;
-  align-items: flex-end;
 }
 /*- HUD -*/
 
@@ -137,8 +140,8 @@
   color: #fff;
 }
 .hud-button{
-    height: 100px;
-    width: 100px;
+    height: 75px;
+    width: 75px;
     margin: 10px;
     padding: 5px;
     background-color: rgba(0, 0, 0, 0.6);
@@ -152,5 +155,10 @@
 }
 .hud-button:focus{
     outline:none;
+}
+.button-icon{
+  width: 100%;
+  max-width: 50px;
+  height: auto;
 }
 /*- BUTTONS -*/
