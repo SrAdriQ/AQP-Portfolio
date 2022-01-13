@@ -106,6 +106,12 @@
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
+.box-title{
+  width: 98%;
+}
+.box-title-button{
+  width: 3%;
+}
 .box-h2{
   margin-top: auto !important;
   margin-left: 15px !important;
@@ -267,6 +273,107 @@
 
 /*+ TIMELINE +*/
 .timeline-header{
-  text-align: center;
+  text-align: center;  
+}
+.timeline-container{
+  position: relative;
+  height: 620px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.timeline-item {
+  width: 100%;
+  margin-bottom: 70px;
+}
+
+.timeline-content
+{
+  position: relative;
+}
+.timeline-content::before
+{
+  content: "";
+  background: #fff;
+  width: 5px;
+  height: 95%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  width: 100%;
+  margin-bottom: 70px;
+}
+.timeline-item:nth-child(even) .timeline-card {
+  float: right;
+  padding: 40px 30px 10px 30px;
+}
+.timeline-item:nth-child(even) .timeline-card .date {
+  right: auto;
+  left: 0;
+}
+.timeline-item:nth-child(even) .timeline-card::after {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  width: 0;
+  height: 0;
+  top: 30px;
+  left: -15px;
+  border-width: 10px 15px 10px 0;
+  border-color: transparent rgba(0, 0, 0, 0.6) transparent transparent;
+}
+.timeline-item::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.timeline-point {
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  margin-top: 58px;
+  margin-left: -15px;
+}
+.timeline-flex{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.timeline-card {
+  position: relative;
+  width: 350px;
+  margin-right: 450px;
+  padding:30px 30px;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 30px 35px -15px rgba(0, 0, 0, 0.6);
+}
+.timeline-card::after {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  width: 0;
+  height: 0;
+  top: 65px;
+  right: -15px;
+  border-width: 10px 0 10px 15px;
+  border-color: transparent transparent transparent rgba(0, 0, 0, 0.6);
+}
+.date {
+  background: #fff;
+  display: inline-block;
+  color: #222;
+  padding: 10px;
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  box-shadow: 0 30px 35px -15px rgba(0, 0, 0, 0.6);
+  border-radius: 2px;
 }
 /*- TIMELINE -*/
