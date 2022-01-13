@@ -29,14 +29,23 @@
 </head>
 
 <body>
-    <div class="background-video">
+    <div id="bg" class="background-video">
         <video src="../src/video/bckv.webm" autoplay muted loop type="video/mp4"></video>
     </div>
     <main>
+        <div id="load-screen" class="load-screen-bg">
+            <div class="loading-content">
+                <h1 class="loading-text">Loading</h1>
+                <div class="load-bar">
+                    <span id="load-bar"></span>
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="col">
                 <div class="hud display-row">
-                    <img src="../src/img/profile.png" class="order-0 img-fluid rounded-circle profile-photo" alt="adrian photo">
+                    <img src="../src/img/profile.png" class="order-0 img-fluid rounded-circle profile-photo"
+                        alt="adrian photo">
                     <div class="display-column order-1">
                         <div class="hud-text">Adri&aacute;n Quir&oacute;s Pascual</div>
                         <div class="bg-bar health-bg">
@@ -49,53 +58,50 @@
                 </div>
             </div>
         </div>
-        <br/>
-        <div class="row">
-            <div class="col-4">
-                <div id="content-menu" class="box-container display-column hide">
+        <br />
+        <div id="profile" class="row hide">
+            <div class="col">
+                <div  class="box-container display-column">
                     <div class="box-header display-row">
                         <div class="size-20">
-                            <h2 class="box-h2">Content</h2>
+                            <h2 class="box-h2">Profile</h2>
                         </div>
                         <div class="size-1 display-row">
-                            <button class="close-button" onClick="closeWindow('content-menu')">X</button>
+                            <button class="close-button" onClick="closeWindow('profile')">X</button>
                         </div>
                     </div>
-                    <div class="item-box-container">Test</div>
-                    <div class="item-box-container">Test</div>
-                    <div class="item-box-container">Test</div>
-                    <div class="item-box-container">Test</div>
-                    <div class="item-box-container" style="margin-bottom: 12px;">Test</div>
                 </div>
             </div>
         </div>
-        <div id="profile" class="profile-container box-container display-column">
-            <div class="box-header display-row">
-                <div class="size-20">
-                    <h2 class="box-h2">Profile</h2>
+        <div id="jobs" class="row hide">
+            <div class="col">
+                <div class="box-container  display-column">
+                    <div class="box-header display-row">
+                        <div class="size-20">
+                            <h2 class="box-h2">Jobs</h2>
+                        </div>
+                        <div class="size-1 display-row">
+                            <button class="close-button" onClick="closeWindow('jobs')">X</button>
+                        </div>
+                    </div>
+                    <div class="timeline-header">
+                        <h2 class="box-h2">My jobs & studies</h2>
+                    </div>
                 </div>
-                <div class="size-1 display-row">
-                    <button class="close-button" onClick="closeWindow('profile')">X</button>
-                </div>
+                
             </div>
         </div>
-        <div id="jobs" class="jobs-container box-container display-column">
-            <div class="box-header display-row">
-                <div class="size-20">
-                    <h2 class="box-h2">Jobs</h2>
-                </div>
-                <div class="size-1 display-row">
-                    <button class="close-button" onClick="closeWindow('jobs')">X</button>
-                </div>
-            </div>
-        </div>
-        <div id="projects" class="jobs-container box-container display-column">
-            <div class="box-header display-row">
-                <div class="size-20">
-                    <h2 class="box-h2">Jobs</h2>
-                </div>
-                <div class="size-1 display-row">
-                    <button class="close-button" onClick="closeWindow('jobs')">X</button>
+        <div id="projects" class="row hide">
+            <div class="col">
+                <div  class="box-container display-column">
+                    <div class="box-header display-row">
+                        <div class="size-20">
+                            <h2 class="box-h2">Projects</h2>
+                        </div>
+                        <div class="size-1 display-row">
+                            <button class="close-button" onClick="closeWindow('projects')">X</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -103,17 +109,20 @@
             <div class="col">
                 <div class="display-row hud-button-panel">
                     <button class="hud-button">
-                        <img class="button-icon" src="../src/img/profile-48.png" alt="profile" onClick="openWindow('content-menu')">
+                        <img class="button-icon" src="../src/img/profile-48.png" alt="profile"
+                            onClick="openWindow('profile')">
                     </button>
                     <button class="hud-button">
-                        <img class="button-icon" src="../src/img/jobs-48.png" alt="jobs" onClick="openWindow('')">
+                        <img class="button-icon" src="../src/img/jobs-48.png" alt="jobs" onClick="openWindow('jobs')">
                     </button>
                     <button class="hud-button">
-                        <img class="button-icon" src="../src/img/projects-48.png" alt="projects" onClick="openWindow('')">
+                        <img class="button-icon" src="../src/img/projects-48.png" alt="projects"
+                            onClick="openWindow('projects')">
                     </button>
                 </div>
             </div>
         </div>
     </main>
 </body>
+
 </html>
