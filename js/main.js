@@ -1,14 +1,13 @@
 var isReady = 0;
 
 $(document).ready(function () {
-  load();
+	load();
+	$('#timeline').scroll(function () {
+		fadeTimelineCards();
+	});
 });
 
-$(window).scroll(function() {
-  if ($('#jobs').hasClass('show')) {
-    fadeIn();
-  }
-});
+
 
 function load() {
   if (isReady == 0) {
@@ -36,54 +35,62 @@ function closeWindow(containerId) {
 function openWindow(containerId) {
   $('#' + containerId).addClass('show');
   $('#' + containerId).removeClass('hide');
+
+  switch (containerId) {
+	  case "profile":
+		  closeWindow("jobs");
+		  closeWindow("projects");
+		  break;
+	  case "jobs":
+		  closeWindow("profile");
+		  closeWindow("projects");
+		  fadeTimelineCards();
+		  break;
+	  case "projects":
+		  closeWindow("profile");
+		  closeWindow("jobs");
+		  break;
+	  default:
+		  console.log("The container dosen't exist: " + containerId);
+		  break;
+  }
 }
 
-function fadeIn(){
+function fadeTimelineCards(){
+	$(".timeline-card").each(function (index) {
+		if(isOverflowing($(this)))
+		{
+			if((index+1) % 2 === 0)
+			{
+				$(this).addClass('fadeOutRight');
+				$(this).removeClass('fadeInRight');
+			}
+			else
+			{
+				$(this).addClass('fadeOutLeft');
+				$(this).removeClass('fadeInLeft');
+			}
+		}
+		else
+		{
+			if ((index + 1) % 2 === 0)
+			{
+				$(this).addClass('fadeInRight');
+				$(this).removeClass('fadeOutRight');
+			}
+			else
+			{
+				$(this).addClass('fadeInLeft');
+				$(this).removeClass('fadeOutLeft');
+			}
+		}
+	});
+}
 
-  window.sr = ScrollReveal();
-
-  if ($(window).width() < 768) {
-
-  	if ($('.timeline-card').hasClass('fadeInLeft')) {
-  		$('.timeline-card').removeClass('fadeInLeft').addClass('fadeInRight');
-  	}
-
-  	sr.reveal('.fadeInRight', {
-	    origin: 'right',
-	    distance: '300px',
-	    easing: 'ease-in-out',
-	    duration: 800,
-	  });
-
-  } else {
-  	
-  	sr.reveal('.fadeInLeft', {
-	    origin: 'left',
-	    distance: '300px',
-		  easing: 'ease-in-out',
-	    duration: 800,
-	  });
-
-	  sr.reveal('.fadeInRight', {
-	    origin: 'right',
-	    distance: '300px',
-	    easing: 'ease-in-out',
-	    duration: 800,
-	  });
-
-  }
-  
-  sr.reveal('.fadeInLeft', {
-	    origin: 'left',
-	    distance: '300px',
-		  easing: 'ease-in-out',
-	    duration: 800,
-	  });
-
-	  sr.reveal('.fadeInRight', {
-	    origin: 'right',
-	    distance: '300px',
-	    easing: 'ease-in-out',
-	    duration: 800,
-	  });
-  }
+function isOverflowing(card){
+	var scrollTop = $('#timeline').scrollTop();
+	var cardPosition = card.position().top + card.height(); 
+	var offsetH = cardPosition -= scrollTop;
+	var scrollH = $('#timeline').outerHeight();  
+	return (offsetH > scrollH || offsetH < 0);
+}

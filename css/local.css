@@ -272,48 +272,82 @@
 /*- LOADING SCREEN-*/
 
 /*+ TIMELINE +*/
-.timeline-header{
-  text-align: center;  
-}
-.timeline-container{
-  position: relative;
-  height: 620px;
+.timeline-content{
+  width: 100%;
+  height: 635px;
   overflow-y: scroll;
   overflow-x: hidden;
 }
-
-.timeline-item {
+.timeline-header{
   width: 100%;
-  margin-bottom: 70px;
+  text-align: center;
 }
-
-.timeline-content
-{
+.timeline-item{
+  width: 100%;
+  margin-bottom: 100px;
+}
+.timeline-container{
+  width: 67%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.timeline-line{
   position: relative;
-}
-.timeline-content::before
-{
+ }
+.timeline-line::before{
   content: "";
-  background: #fff;
+  position: absolute;
+  background-color: #fff;
   width: 5px;
   height: 95%;
-  position: absolute;
   left: 50%;
   transform: translateX(-50%);
 }
-
-.timeline-item {
-  width: 100%;
-  margin-bottom: 70px;
+.timeline-card{
+  position:relative;
+  width: 45%;
+  padding:10px 30px;
+  background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: rgba(0, 0, 0, 0.45);
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+.timeline-button{
+  width: 130px;
+  position: absolute;
+  right: 25px;
+  bottom: 20px;
+  max-height: 25px;
+  display: table-cell;
+  vertical-align: middle;
+  background: transparent;
+  border-style: none;
+  outline:5px auto -webkit-focus-ring-color;
+  color: #fff;
+}
+.timeline-card::after{
+  content: "";
+  position: absolute;
+  border-style: solid;
+  width: 0;
+  height: 0;
+  top: 30px;
+  right: -15px;
+  border-width: 10px 0 10px 15px;
+  border-color: transparent transparent transparent rgba(0, 0, 0, 0.6);
+}
+.timeline-card p {
+  margin-bottom: 45px;
 }
 .timeline-item:nth-child(even) .timeline-card {
   float: right;
-  padding: 40px 30px 10px 30px;
 }
-.timeline-item:nth-child(even) .timeline-card .date {
-  right: auto;
-  left: 0;
-}
+
 .timeline-item:nth-child(even) .timeline-card::after {
   content: "";
   position: absolute;
@@ -330,50 +364,150 @@
   display: block;
   clear: both;
 }
-.timeline-point {
-  width: 30px;
-  height: 30px;
-  background: #fff;
-  border-radius: 50%;
+.timeline-point{
   position: absolute;
   left: 50%;
-  margin-top: 58px;
+  width: 30px;
+  height: 30px;
+  margin-top: 25px;
   margin-left: -15px;
+  background-color: #fff;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
-.timeline-flex{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-.timeline-card {
-  position: relative;
-  width: 350px;
-  margin-right: 450px;
-  padding:30px 30px;
-  border-radius: 8px;
-  background-color: rgba(0, 0, 0, 0.6);
-  box-shadow: 0 30px 35px -15px rgba(0, 0, 0, 0.6);
-}
-.timeline-card::after {
-  content: "";
-  position: absolute;
-  border-style: solid;
-  width: 0;
-  height: 0;
-  top: 65px;
-  right: -15px;
-  border-width: 10px 0 10px 15px;
-  border-color: transparent transparent transparent rgba(0, 0, 0, 0.6);
-}
-.date {
+.timeline-date
+{
   background: #fff;
   display: inline-block;
-  color: #222;
+  color: #000;
   padding: 10px;
   position: absolute;
   top: -15px;
   right: -15px;
-  box-shadow: 0 30px 35px -15px rgba(0, 0, 0, 0.6);
-  border-radius: 2px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+.timeline-fade
+{
+  animation-duration: 2s;
+  animation-fill-mode: both;
+}
+
+.fadeInLeft {
+  animation-name: fadeInLeft;  
+} 
+.fadeInRight {
+  animation-name: fadeInRight;
+}
+.fadeOutLeft{
+  animation-name: fadeOutLeft; 
+}
+.fadeOutRight{
+  animation-name: fadeOutRight; 
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-300px);
+    -webkit-transform: translateX(-300px);
+    -moz-transform: translateX(-300px);
+    -ms-transform: translateX(-300px);
+    -o-transform: translateX(-300px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+  }
+}   
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(300px);
+    -webkit-transform: translateX(300px);
+    -moz-transform: translateX(300px);
+    -ms-transform: translateX(300px);
+    -o-transform: translateX(300px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+  }
+}  
+
+@keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-300px);
+    -webkit-transform: translateX(-300px);
+    -moz-transform: translateX(-300px);
+    -ms-transform: translateX(-300px);
+    -o-transform: translateX(-300px);
+  }
+} 
+@keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(300px);
+    -webkit-transform: translateX(300px);
+    -moz-transform: translateX(300px);
+    -ms-transform: translateX(300px);
+    -o-transform: translateX(300px);
+  }
+}
+#timeline::-webkit-scrollbar,
+#timeline::-webkit-scrollbar-thumb {
+  width: 26px;
+  border-radius: 13px;
+  background-clip: padding-box;
+  border: 10px solid transparent;
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  -ms-border-radius: 13px;
+  -o-border-radius: 13px;
+  transition: color .3s ease;
+}
+
+#timeline::-webkit-scrollbar-thumb {        
+  color: rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 0 0 10px;
+}
+#timeline::-webkit-scrollbar-thumb:hover {        
+  color: rgba(255, 255, 255, 1);
+}
+
+/* Track */
+#timeline::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0); 
 }
 /*- TIMELINE -*/
