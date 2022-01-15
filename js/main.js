@@ -90,7 +90,7 @@ function fadeTimelineCards(){
 function isOverflowing(card){
 	var scrollTop = $('#timeline').scrollTop();
 	var cardPosition = card.position().top + card.height(); 
-	var offsetH = cardPosition -= scrollTop;
+	var offsetH = cardPosition - scrollTop;
 	var scrollH = $('#timeline').outerHeight();  
 	return (offsetH > scrollH || offsetH < 0);
 }
